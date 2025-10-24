@@ -132,6 +132,53 @@ The tool uses JSON files to store cybersecurity resource data. Each phase file c
 }
 ```
 
+## Development
+
+### Building from Source
+
+For contributors and advanced users:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/saddatahmad19/kresour.git
+   cd kresour
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   go mod download
+   ```
+
+3. **Build the application:**
+   ```bash
+   make build
+   # or
+   go build -o kresour ./cmd/kresour
+   ```
+
+4. **Run tests:**
+   ```bash
+   make test
+   ```
+
+### Release Process
+
+Kresour uses automated releases with GoReleaser and GitHub Actions. See [RELEASE.md](RELEASE.md) for detailed information about:
+
+- Creating releases
+- Cross-platform builds
+- Release automation
+- Troubleshooting
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Run `make test` and `make lint`
+6. Submit a pull request
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

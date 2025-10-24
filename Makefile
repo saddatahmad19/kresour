@@ -6,7 +6,7 @@ BINARY_NAME := kresour
 VERSION := $(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
 BUILD_TIME := $(shell date -u '+%Y-%m-%d_%H:%M:%S')
 GO_VERSION := $(shell go version | awk '{print $$3}')
-LDFLAGS := -ldflags "-X main.version=$(VERSION) -X main.buildTime=$(BUILD_TIME) -X main.goVersion=$(GO_VERSION)"
+LDFLAGS := -ldflags "-X main.version=$(VERSION) -X main.commit=$(shell git rev-parse --short HEAD 2>/dev/null || echo 'unknown') -X main.date=$(BUILD_TIME) -X main.builtBy=make"
 
 # Default target
 .PHONY: all
@@ -130,6 +130,26 @@ dev:
 		$(MAKE) run; \
 	fi
 
+# Create a release (requires goreleaser)
+.PHONY: release
+release:
+	@echo "Creating release with GoReleaser..."
+	@if ! command -v goreleaser >/dev/null 2>&1; then \
+		echo "GoReleaser not found. Installing..."; \
+		go install github.com/goreleaser/goreleaser@latest; \
+	fi
+	@goreleaser release --clean
+
+# Create a snapshot release
+.PHONY: snapshot
+snapshot:
+	@echo "Creating snapshot release..."
+	@if ! command -v goreleaser >/dev/null 2>&1; then \
+		echo "GoReleaser not found. Installing..."; \
+		go install github.com/goreleaser/goreleaser@latest; \
+	fi
+	@goreleaser release --snapshot --clean
+
 # Show help
 .PHONY: help
 help:
@@ -149,4 +169,6 @@ help:
 	@echo "  clean         - Clean build artifacts"
 	@echo "  run           - Run the application"
 	@echo "  dev           - Development mode with auto-reload"
+	@echo "  release       - Create a release with GoReleaser (requires tag)"
+	@echo "  snapshot      - Create a snapshot release with GoReleaser"
 	@echo "  help          - Show this help message"
