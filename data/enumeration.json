@@ -1,0 +1,303 @@
+{
+  "phase": "Enumeration",
+  "phaseDescription": "Extracting detailed information from the target, such as user accounts, shares, and service versions, to pinpoint vulnerabilities.",
+  "tools": [
+    {
+      "toolName": "Nmap",
+      "toolDescription": "Uses scripts and version detection for enumerating services and their details.",
+      "toolStartCommand": "nmap",
+      "toolCommands": [
+        {
+          "toolCommand": "nmap -sV --script smb-enum-users -p 445 192.168.1.100",
+          "commandDescription": "Enumerates SMB users on port 445 of the target."
+        }
+      ]
+    },
+    {
+      "toolName": "Enum4linux",
+      "toolDescription": "Enumerates SMB shares, users, groups, and policies on Windows or Samba servers.",
+      "toolStartCommand": "enum4linux",
+      "toolCommands": [
+        {
+          "toolCommand": "enum4linux -a 192.168.1.100",
+          "commandDescription": "Performs all enumeration tasks on the target IP."
+        }
+      ]
+    },
+    {
+      "toolName": "SMBMap",
+      "toolDescription": "Lists SMB shares and checks permissions on a target system.",
+      "toolStartCommand": "smbmap",
+      "toolCommands": [
+        {
+          "toolCommand": "smbmap -H 192.168.1.100",
+          "commandDescription": "Enumerates shares on the target host."
+        }
+      ]
+    },
+    {
+      "toolName": "rpcclient",
+      "toolDescription": "Interacts with RPC services to enumerate users and groups on Windows systems.",
+      "toolStartCommand": "rpcclient",
+      "toolCommands": [
+        {
+          "toolCommand": "rpcclient -U \"\" 192.168.1.100 -c \"enumdomusers\"",
+          "commandDescription": "Enumerates domain users on the target."
+        }
+      ]
+    },
+    {
+      "toolName": "snmpwalk",
+      "toolDescription": "Queries SNMP-enabled devices to retrieve configuration and system information.",
+      "toolStartCommand": "snmpwalk",
+      "toolCommands": [
+        {
+          "toolCommand": "snmpwalk -v2c -c public 192.168.1.100",
+          "commandDescription": "Walks the SNMP tree using the 'public' community string."
+        }
+      ]
+    },
+    {
+      "toolName": "Onesixtyone",
+      "toolDescription": "A fast SNMP scanner for enumerating community strings.",
+      "toolStartCommand": "onesixtyone",
+      "toolCommands": [
+        {
+          "toolCommand": "onesixtyone -c community.txt 192.168.1.100",
+          "commandDescription": "Tests community strings from a file against the target."
+        }
+      ]
+    },
+    {
+      "toolName": "ldapsearch",
+      "toolDescription": "Queries LDAP directories to extract user and group information.",
+      "toolStartCommand": "ldapsearch",
+      "toolCommands": [
+        {
+          "toolCommand": "ldapsearch -x -H ldap://192.168.1.100 -b \"dc=example,dc=com\"",
+          "commandDescription": "Searches the LDAP directory with simple authentication."
+        }
+      ]
+    },
+    {
+      "toolName": "Finger",
+      "toolDescription": "Enumerates user information from systems running the finger service.",
+      "toolStartCommand": "finger",
+      "toolCommands": [
+        {
+          "toolCommand": "finger @192.168.1.100",
+          "commandDescription": "Queries user details from the finger service on the target."
+        }
+      ]
+    },
+    {
+      "toolName": "NetBIOS Enumerator",
+      "toolDescription": "Enumerates NetBIOS names and shares on a network.",
+      "toolStartCommand": "nbtscan",
+      "toolCommands": [
+        {
+          "toolCommand": "nbtscan 192.168.1.0/24",
+          "commandDescription": "Scans the 192.168.1.0/24 network for NetBIOS information."
+        }
+      ]
+    },
+    {
+      "toolName": "Nikto",
+      "toolDescription": "Scans web servers for misconfigurations, outdated software, and vulnerabilities.",
+      "toolStartCommand": "nikto",
+      "toolCommands": [
+        {
+          "toolCommand": "nikto -h http://example.com",
+          "commandDescription": "Performs a comprehensive scan of the web server."
+        }
+      ]
+    },
+    {
+      "toolName": "Dirb",
+      "toolDescription": "Web content scanner that performs dictionary attacks against web servers.",
+      "toolStartCommand": "dirb",
+      "toolCommands": [
+        {
+          "toolCommand": "dirb http://example.com",
+          "commandDescription": "Scans for hidden directories and files on the web server."
+        }
+      ]
+    },
+    {
+      "toolName": "Dirbuster",
+      "toolDescription": "Multi-threaded web application directory and file brute forcer.",
+      "toolStartCommand": "dirbuster",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch DirBuster GUI",
+          "commandDescription": "Starts the DirBuster application for directory enumeration."
+        }
+      ]
+    },
+    {
+      "toolName": "Dirsearch",
+      "toolDescription": "Web path scanner designed to brute force directories and files in web servers.",
+      "toolStartCommand": "dirsearch",
+      "toolCommands": [
+        {
+          "toolCommand": "dirsearch -u http://example.com",
+          "commandDescription": "Performs directory brute-forcing on the target website."
+        }
+      ]
+    },
+    {
+      "toolName": "FFuF",
+      "toolDescription": "Fast web fuzzer written in Go for finding hidden files and directories.",
+      "toolStartCommand": "ffuf",
+      "toolCommands": [
+        {
+          "toolCommand": "ffuf -w wordlist.txt -u http://example.com/FUZZ",
+          "commandDescription": "Fuzzes the target URL with the specified wordlist."
+        }
+      ]
+    },
+    {
+      "toolName": "WFuzz",
+      "toolDescription": "Web application fuzzer for finding vulnerabilities in web applications.",
+      "toolStartCommand": "wfuzz",
+      "toolCommands": [
+        {
+          "toolCommand": "wfuzz -c -z file,wordlist.txt --hc 404 http://example.com/FUZZ",
+          "commandDescription": "Fuzzes the target while filtering out 404 responses."
+        }
+      ]
+    },
+    {
+      "toolName": "Gobuster",
+      "toolDescription": "Directory/file brute-forcing tool written in Go.",
+      "toolStartCommand": "gobuster",
+      "toolCommands": [
+        {
+          "toolCommand": "gobuster dir -u http://example.com -w wordlist.txt",
+          "commandDescription": "Performs directory brute-forcing on the target website."
+        }
+      ]
+    },
+    {
+      "toolName": "SMBMap",
+      "toolDescription": "Lists SMB shares and checks permissions on a target system.",
+      "toolStartCommand": "smbmap",
+      "toolCommands": [
+        {
+          "toolCommand": "smbmap -H 192.168.1.100",
+          "commandDescription": "Enumerates shares on the target host."
+        }
+      ]
+    },
+    {
+      "toolName": "Enum4linux",
+      "toolDescription": "Enumerates SMB shares, users, groups, and policies on Windows or Samba servers.",
+      "toolStartCommand": "enum4linux",
+      "toolCommands": [
+        {
+          "toolCommand": "enum4linux -a 192.168.1.100",
+          "commandDescription": "Performs all enumeration tasks on the target IP."
+        }
+      ]
+    },
+    {
+      "toolName": "SMBClient",
+      "toolDescription": "Command-line SMB client for accessing SMB shares.",
+      "toolStartCommand": "smbclient",
+      "toolCommands": [
+        {
+          "toolCommand": "smbclient -L 192.168.1.100",
+          "commandDescription": "Lists available shares on the target host."
+        }
+      ]
+    },
+    {
+      "toolName": "SNMPWalk",
+      "toolDescription": "Queries SNMP-enabled devices to retrieve configuration and system information.",
+      "toolStartCommand": "snmpwalk",
+      "toolCommands": [
+        {
+          "toolCommand": "snmpwalk -v2c -c public 192.168.1.100",
+          "commandDescription": "Walks the SNMP tree using the 'public' community string."
+        }
+      ]
+    },
+    {
+      "toolName": "Onesixtyone",
+      "toolDescription": "A fast SNMP scanner for enumerating community strings.",
+      "toolStartCommand": "onesixtyone",
+      "toolCommands": [
+        {
+          "toolCommand": "onesixtyone -c community.txt 192.168.1.100",
+          "commandDescription": "Tests community strings from a file against the target."
+        }
+      ]
+    },
+    {
+      "toolName": "LDAPSearch",
+      "toolDescription": "Queries LDAP directories to extract user and group information.",
+      "toolStartCommand": "ldapsearch",
+      "toolCommands": [
+        {
+          "toolCommand": "ldapsearch -x -H ldap://192.168.1.100 -b \"dc=example,dc=com\"",
+          "commandDescription": "Searches the LDAP directory with simple authentication."
+        }
+      ]
+    },
+    {
+      "toolName": "Finger",
+      "toolDescription": "Enumerates user information from systems running the finger service.",
+      "toolStartCommand": "finger",
+      "toolCommands": [
+        {
+          "toolCommand": "finger @192.168.1.100",
+          "commandDescription": "Queries user details from the finger service on the target."
+        }
+      ]
+    },
+    {
+      "toolName": "NetBIOS Enumerator",
+      "toolDescription": "Enumerates NetBIOS names and shares on a network.",
+      "toolStartCommand": "nbtscan",
+      "toolCommands": [
+        {
+          "toolCommand": "nbtscan 192.168.1.0/24",
+          "commandDescription": "Scans the 192.168.1.0/24 network for NetBIOS information."
+        }
+      ]
+    },
+    {
+      "toolName": "SMTP User Enum",
+      "toolDescription": "Enumerates valid email addresses on SMTP servers.",
+      "toolStartCommand": "smtp-user-enum",
+      "toolCommands": [
+        {
+          "toolCommand": "smtp-user-enum -M VRFY -U users.txt -t 192.168.1.100",
+          "commandDescription": "Enumerates SMTP users using VRFY command."
+        }
+      ]
+    },
+    {
+      "toolName": "WPScan",
+      "toolDescription": "WordPress vulnerability scanner that checks for security issues in WordPress sites.",
+      "toolStartCommand": "wpscan",
+      "toolCommands": [
+        {
+          "toolCommand": "wpscan --url http://example.com",
+          "commandDescription": "Scans the WordPress site for vulnerabilities and plugins."
+        }
+      ]
+    },
+    {
+      "toolName": "WAFW00F",
+      "toolDescription": "Identifies and fingerprints web application firewalls.",
+      "toolStartCommand": "wafw00f",
+      "toolCommands": [
+        {
+          "toolCommand": "wafw00f http://example.com",
+          "commandDescription": "Identifies the web application firewall protecting the site."
+        }
+      ]
+    }
+  ]
+}

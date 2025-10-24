@@ -1,0 +1,133 @@
+{
+  "phase": "Reporting",
+  "phaseDescription": "Consolidating findings, methodologies, and recommendations into a professional document to communicate results to stakeholders effectively.",
+  "tools": [
+    {
+      "toolName": "Dradis",
+      "toolDescription": "A web-based platform for collaboration and generating structured penetration test reports.",
+      "toolStartCommand": "dradis server",
+      "toolCommands": [
+        {
+          "toolCommand": "Access the web interface at http://localhost:3000",
+          "commandDescription": "Logs into the Dradis interface to manage findings."
+        },
+        {
+          "toolCommand": "Import scan results and generate report",
+          "commandDescription": "Imports data and creates a structured report."
+        }
+      ]
+    },
+    {
+      "toolName": "PwnDoc",
+      "toolDescription": "Generates customizable Word reports from JSON findings and templates.",
+      "toolStartCommand": "pwndoc",
+      "toolCommands": [
+        {
+          "toolCommand": "pwndoc --template template.docx --findings findings.json --output report.docx",
+          "commandDescription": "Creates a report using the specified template and findings."
+        }
+      ]
+    },
+    {
+      "toolName": "Serpico",
+      "toolDescription": "A penetration testing report generation and collaboration tool.",
+      "toolStartCommand": "serpico",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Serpico server",
+          "commandDescription": "Starts the Serpico web server."
+        },
+        {
+          "toolCommand": "Access http://localhost:8443 and create report",
+          "commandDescription": "Uses the web interface to build a report."
+        }
+      ]
+    },
+    {
+      "toolName": "MagicTree",
+      "toolDescription": "A GUI tool for organizing scan results and generating reports.",
+      "toolStartCommand": "magictree",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch MagicTree GUI",
+          "commandDescription": "Starts the MagicTree application."
+        },
+        {
+          "toolCommand": "Import Nmap XML and generate report",
+          "commandDescription": "Loads scan data and creates a report."
+        }
+      ]
+    },
+    {
+      "toolName": "KeepNote",
+      "toolDescription": "A note-taking application for organizing findings during engagements.",
+      "toolStartCommand": "keepnote",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch KeepNote GUI",
+          "commandDescription": "Starts the KeepNote application."
+        },
+        {
+          "toolCommand": "Create a new notebook and export to HTML",
+          "commandDescription": "Organizes findings and exports them as a report."
+        }
+      ]
+    },
+    {
+      "toolName": "MagicTree",
+      "toolDescription": "GUI tool for organizing scan results and generating reports.",
+      "toolStartCommand": "magictree",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch MagicTree GUI",
+          "commandDescription": "Starts the MagicTree application."
+        },
+        {
+          "toolCommand": "Import Nmap XML and generate report",
+          "commandDescription": "Loads scan data and creates a report."
+        }
+      ]
+    },
+    {
+      "toolName": "Dradis",
+      "toolDescription": "Web-based platform for collaboration and generating structured penetration test reports.",
+      "toolStartCommand": "dradis server",
+      "toolCommands": [
+        {
+          "toolCommand": "Access the web interface at http://localhost:3000",
+          "commandDescription": "Logs into the Dradis interface to manage findings."
+        },
+        {
+          "toolCommand": "Import scan results and generate report",
+          "commandDescription": "Imports data and creates a structured report."
+        }
+      ]
+    },
+    {
+      "toolName": "PwnDoc",
+      "toolDescription": "Generates customizable Word reports from JSON findings and templates.",
+      "toolStartCommand": "pwndoc",
+      "toolCommands": [
+        {
+          "toolCommand": "pwndoc --template template.docx --findings findings.json --output report.docx",
+          "commandDescription": "Creates a report using the specified template and findings."
+        }
+      ]
+    },
+    {
+      "toolName": "Serpico",
+      "toolDescription": "Penetration testing report generation and collaboration tool.",
+      "toolStartCommand": "serpico",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Serpico server",
+          "commandDescription": "Starts the Serpico web server."
+        },
+        {
+          "toolCommand": "Access http://localhost:8443 and create report",
+          "commandDescription": "Uses the web interface to build a report."
+        }
+      ]
+    }
+  ]
+}

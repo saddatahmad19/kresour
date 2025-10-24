@@ -1,0 +1,479 @@
+{
+  "phase": "Miscellaneous",
+  "phaseDescription": "General-purpose tools, utilities, and frameworks that span multiple phases or don't fit into specific categories.",
+  "tools": [
+    {
+      "toolName": "PowerShell",
+      "toolDescription": "Cross-platform command-line shell and scripting language for automation and administration.",
+      "toolStartCommand": "pwsh",
+      "toolCommands": [
+        {
+          "toolCommand": "pwsh",
+          "commandDescription": "Starts the PowerShell interactive shell."
+        }
+      ]
+    },
+    {
+      "toolName": "Socat",
+      "toolDescription": "Multipurpose relay for bidirectional data transfer between two independent data channels.",
+      "toolStartCommand": "socat",
+      "toolCommands": [
+        {
+          "toolCommand": "socat TCP-LISTEN:8080,fork TCP:192.168.1.100:80",
+          "commandDescription": "Creates a TCP relay from port 8080 to 192.168.1.100:80."
+        }
+      ]
+    },
+    {
+      "toolName": "Netcat",
+      "toolDescription": "Versatile networking tool for port scanning, banner grabbing, and basic connectivity testing.",
+      "toolStartCommand": "nc",
+      "toolCommands": [
+        {
+          "toolCommand": "nc -lvp 4444",
+          "commandDescription": "Listens for incoming connections on port 4444."
+        }
+      ]
+    },
+    {
+      "toolName": "WMI",
+      "toolDescription": "Windows Management Instrumentation client for remote system administration.",
+      "toolStartCommand": "wmic",
+      "toolCommands": [
+        {
+          "toolCommand": "wmic /node:192.168.1.100 process list",
+          "commandDescription": "Lists running processes on the remote system."
+        }
+      ]
+    },
+    {
+      "toolName": "MDK3",
+      "toolDescription": "Wireless attack tool for testing wireless networks and access points.",
+      "toolStartCommand": "mdk3",
+      "toolCommands": [
+        {
+          "toolCommand": "mdk3 wlan0 d -c 6",
+          "commandDescription": "Performs deauthentication attack on channel 6."
+        }
+      ]
+    },
+    {
+      "toolName": "Chirp",
+      "toolDescription": "Software-defined radio tool for analyzing and manipulating radio signals.",
+      "toolStartCommand": "chirpw",
+      "toolCommands": [
+        {
+          "toolCommand": "chirpw",
+          "commandDescription": "Launches the Chirp software-defined radio tool."
+        }
+      ]
+    },
+    {
+      "toolName": "DMitry",
+      "toolDescription": "Deepmagic Information Gathering Tool for comprehensive reconnaissance.",
+      "toolStartCommand": "dmitry",
+      "toolCommands": [
+        {
+          "toolCommand": "dmitry -wnse example.com",
+          "commandDescription": "Performs comprehensive reconnaissance on the target domain."
+        }
+      ]
+    },
+    {
+      "toolName": "EyeWitness",
+      "toolDescription": "Takes screenshots of websites and generates a report for web application reconnaissance.",
+      "toolStartCommand": "eyewitness",
+      "toolCommands": [
+        {
+          "toolCommand": "eyewitness --web -f urls.txt --headless",
+          "commandDescription": "Takes screenshots of websites from the URL list."
+        }
+      ]
+    },
+    {
+      "toolName": "Autopsy",
+      "toolDescription": "Digital forensics platform and graphical interface to The Sleuth Kit for forensic analysis.",
+      "toolStartCommand": "autopsy",
+      "toolCommands": [
+        {
+          "toolCommand": "autopsy",
+          "commandDescription": "Launches the Autopsy digital forensics platform."
+        }
+      ]
+    },
+    {
+      "toolName": "Radare2",
+      "toolDescription": "Complete framework for reverse-engineering and analyzing binaries.",
+      "toolStartCommand": "r2",
+      "toolCommands": [
+        {
+          "toolCommand": "r2 -A binary.exe",
+          "commandDescription": "Analyzes the binary with automatic analysis."
+        }
+      ]
+    },
+    {
+      "toolName": "OllyDbg",
+      "toolDescription": "32-bit assembler level analyzing debugger for Windows reverse engineering.",
+      "toolStartCommand": "ollydbg",
+      "toolCommands": [
+        {
+          "toolCommand": "ollydbg",
+          "commandDescription": "Launches the OllyDbg debugger."
+        }
+      ]
+    },
+    {
+      "toolName": "YARA",
+      "toolDescription": "Pattern matching engine for malware researchers and security analysts.",
+      "toolStartCommand": "yara",
+      "toolCommands": [
+        {
+          "toolCommand": "yara rules.yar suspicious_file.exe",
+          "commandDescription": "Scans the file using the specified YARA rules."
+        }
+      ]
+    },
+    {
+      "toolName": "Scapy",
+      "toolDescription": "Python-based interactive packet manipulation program for network analysis.",
+      "toolStartCommand": "scapy",
+      "toolCommands": [
+        {
+          "toolCommand": "scapy",
+          "commandDescription": "Starts the Scapy interactive packet manipulation tool."
+        }
+      ]
+    },
+    {
+      "toolName": "Snort",
+      "toolDescription": "Network intrusion detection and prevention system for monitoring network traffic.",
+      "toolStartCommand": "snort",
+      "toolCommands": [
+        {
+          "toolCommand": "snort -i eth0 -c /etc/snort/snort.conf",
+          "commandDescription": "Starts Snort IDS on the specified interface."
+        }
+      ]
+    },
+    {
+      "toolName": "KeepNote",
+      "toolDescription": "Note-taking application for organizing findings during security engagements.",
+      "toolStartCommand": "keepnote",
+      "toolCommands": [
+        {
+          "toolCommand": "keepnote",
+          "commandDescription": "Launches the KeepNote application."
+        }
+      ]
+    },
+    {
+      "toolName": "MagicTree",
+      "toolDescription": "GUI tool for organizing scan results and generating reports.",
+      "toolStartCommand": "magictree",
+      "toolCommands": [
+        {
+          "toolCommand": "magictree",
+          "commandDescription": "Launches the MagicTree application."
+        }
+      ]
+    },
+    {
+      "toolName": "Dradis",
+      "toolDescription": "Web-based platform for collaboration and generating structured penetration test reports.",
+      "toolStartCommand": "dradis",
+      "toolCommands": [
+        {
+          "toolCommand": "dradis server",
+          "commandDescription": "Starts the Dradis server."
+        }
+      ]
+    },
+    {
+      "toolName": "PwnDoc",
+      "toolDescription": "Generates customizable Word reports from JSON findings and templates.",
+      "toolStartCommand": "pwndoc",
+      "toolCommands": [
+        {
+          "toolCommand": "pwndoc --template template.docx --findings findings.json --output report.docx",
+          "commandDescription": "Creates a report using the specified template and findings."
+        }
+      ]
+    },
+    {
+      "toolName": "Serpico",
+      "toolDescription": "Penetration testing report generation and collaboration tool.",
+      "toolStartCommand": "serpico",
+      "toolCommands": [
+        {
+          "toolCommand": "serpico",
+          "commandDescription": "Starts the Serpico server."
+        }
+      ]
+    },
+    {
+      "toolName": "Maltego",
+      "toolDescription": "GUI-based tool for visualizing relationships between entities through data mining and transforms.",
+      "toolStartCommand": "maltego",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Maltego GUI",
+          "commandDescription": "Starts the Maltego application."
+        }
+      ]
+    },
+    {
+      "toolName": "Burp Suite",
+      "toolDescription": "Comprehensive web application security testing platform.",
+      "toolStartCommand": "burpsuite",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Burp Suite GUI",
+          "commandDescription": "Starts the Burp Suite application."
+        }
+      ]
+    },
+    {
+      "toolName": "DVWA",
+      "toolDescription": "Damn Vulnerable Web Application for learning web security and testing tools.",
+      "toolStartCommand": "dvwa-start",
+      "toolCommands": [
+        {
+          "toolCommand": "dvwa-start",
+          "commandDescription": "Starts the DVWA web application."
+        }
+      ]
+    },
+    {
+      "toolName": "Sherlock",
+      "toolDescription": "Hunt for social media accounts by username across social networks.",
+      "toolStartCommand": "sherlock",
+      "toolCommands": [
+        {
+          "toolCommand": "sherlock username",
+          "commandDescription": "Searches for the username across multiple social media platforms."
+        }
+      ]
+    },
+    {
+      "toolName": "Crunch",
+      "toolDescription": "Wordlist generator for creating custom wordlists for brute-force attacks.",
+      "toolStartCommand": "crunch",
+      "toolCommands": [
+        {
+          "toolCommand": "crunch 8 8 -t @@@@@@@@ -o wordlist.txt",
+          "commandDescription": "Generates 8-character wordlist with custom pattern."
+        }
+      ]
+    },
+    {
+      "toolName": "CEWL",
+      "toolDescription": "Custom word list generator that spiders a given URL to create targeted wordlists.",
+      "toolStartCommand": "cewl",
+      "toolCommands": [
+        {
+          "toolCommand": "cewl -d 2 -m 5 -w wordlist.txt http://example.com",
+          "commandDescription": "Generates wordlist from the target website."
+        }
+      ]
+    },
+    {
+      "toolName": "GoldenEye",
+      "toolDescription": "HTTP DoS testing tool for web applications and load testing.",
+      "toolStartCommand": "goldeneye",
+      "toolCommands": [
+        {
+          "toolCommand": "goldeneye http://example.com",
+          "commandDescription": "Performs HTTP DoS attack on the target."
+        }
+      ]
+    },
+    {
+      "toolName": "Hash-Identifier",
+      "toolDescription": "Identifies different types of hashes used to encrypt data and passwords.",
+      "toolStartCommand": "hash-identifier",
+      "toolCommands": [
+        {
+          "toolCommand": "hash-identifier",
+          "commandDescription": "Starts the hash identification tool."
+        }
+      ]
+    },
+    {
+      "toolName": "Steghide",
+      "toolDescription": "Steganography tool for hiding data in images and audio files.",
+      "toolStartCommand": "steghide",
+      "toolCommands": [
+        {
+          "toolCommand": "steghide embed -cf image.jpg -ef secret.txt",
+          "commandDescription": "Embeds secret.txt into image.jpg."
+        }
+      ]
+    },
+    {
+      "toolName": "Binwalk",
+      "toolDescription": "Firmware analysis tool for extracting embedded files and executable code.",
+      "toolStartCommand": "binwalk",
+      "toolCommands": [
+        {
+          "toolCommand": "binwalk firmware.bin",
+          "commandDescription": "Analyzes the firmware file for embedded files."
+        }
+      ]
+    },
+    {
+      "toolName": "Foremost",
+      "toolDescription": "Data recovery tool for recovering files based on their headers and footers.",
+      "toolStartCommand": "foremost",
+      "toolCommands": [
+        {
+          "toolCommand": "foremost -i disk.img -o recovery/",
+          "commandDescription": "Recovers files from the disk image."
+        }
+      ]
+    },
+    {
+      "toolName": "Macchanger",
+      "toolDescription": "Changes the MAC address of network interfaces for anonymity.",
+      "toolStartCommand": "macchanger",
+      "toolCommands": [
+        {
+          "toolCommand": "macchanger -r eth0",
+          "commandDescription": "Randomizes the MAC address of eth0 interface."
+        }
+      ]
+    },
+    {
+      "toolName": "Chkrootkit",
+      "toolDescription": "Rootkit detection tool for Linux systems to identify compromised systems.",
+      "toolStartCommand": "chkrootkit",
+      "toolCommands": [
+        {
+          "toolCommand": "chkrootkit",
+          "commandDescription": "Scans the system for rootkits."
+        }
+      ]
+    },
+    {
+      "toolName": "RKHunter",
+      "toolDescription": "Rootkit, backdoor, sniffer and exploit scanner for system integrity checks.",
+      "toolStartCommand": "rkhunter",
+      "toolCommands": [
+        {
+          "toolCommand": "rkhunter --check",
+          "commandDescription": "Performs a comprehensive rootkit scan."
+        }
+      ]
+    },
+    {
+      "toolName": "Tiger",
+      "toolDescription": "Security scanner and logger for Unix systems to identify security issues.",
+      "toolStartCommand": "tiger",
+      "toolCommands": [
+        {
+          "toolCommand": "tiger",
+          "commandDescription": "Runs the Tiger security scanner."
+        }
+      ]
+    },
+    {
+      "toolName": "SARA",
+      "toolDescription": "Security Auditor's Research Assistant for vulnerability assessment and security auditing.",
+      "toolStartCommand": "sara",
+      "toolCommands": [
+        {
+          "toolCommand": "sara",
+          "commandDescription": "Starts the SARA security scanner."
+        }
+      ]
+    },
+    {
+      "toolName": "Legion",
+      "toolDescription": "Semi-automated network penetration testing tool for comprehensive security assessments.",
+      "toolStartCommand": "legion",
+      "toolCommands": [
+        {
+          "toolCommand": "legion",
+          "commandDescription": "Launches the Legion penetration testing tool."
+        }
+      ]
+    },
+    {
+      "toolName": "Above",
+      "toolDescription": "Cloud security assessment tool for AWS, Azure, and GCP environments.",
+      "toolStartCommand": "above",
+      "toolCommands": [
+        {
+          "toolCommand": "above",
+          "commandDescription": "Starts the Above cloud security assessment tool."
+        }
+      ]
+    },
+    {
+      "toolName": "Nuclei",
+      "toolDescription": "Fast vulnerability scanner based on simple YAML based templates for automated security testing.",
+      "toolStartCommand": "nuclei",
+      "toolCommands": [
+        {
+          "toolCommand": "nuclei -u http://example.com",
+          "commandDescription": "Scans the target URL for vulnerabilities."
+        }
+      ]
+    },
+    {
+      "toolName": "Ophcrack",
+      "toolDescription": "Windows password cracker based on rainbow tables for password recovery.",
+      "toolStartCommand": "ophcrack",
+      "toolCommands": [
+        {
+          "toolCommand": "ophcrack",
+          "commandDescription": "Launches the Ophcrack password recovery tool."
+        }
+      ]
+    },
+    {
+      "toolName": "Cowpatty",
+      "toolDescription": "WPA-PSK dictionary attack tool for wireless network security testing.",
+      "toolStartCommand": "cowpatty",
+      "toolCommands": [
+        {
+          "toolCommand": "cowpatty -f wordlist.txt -r capture.cap -s \"NetworkName\"",
+          "commandDescription": "Performs dictionary attack on WPA-PSK network."
+        }
+      ]
+    },
+    {
+      "toolName": "Bully",
+      "toolDescription": "WPS PIN recovery tool for attacking WPS-enabled wireless networks.",
+      "toolStartCommand": "bully",
+      "toolCommands": [
+        {
+          "toolCommand": "bully wlan0 -b 00:11:22:33:44:55",
+          "commandDescription": "Attacks the WPS PIN of the specified access point."
+        }
+      ]
+    },
+    {
+      "toolName": "Bluesnarfer",
+      "toolDescription": "Bluetooth security testing tool for discovering and exploiting Bluetooth devices.",
+      "toolStartCommand": "bluesnarfer",
+      "toolCommands": [
+        {
+          "toolCommand": "bluesnarfer -b 00:11:22:33:44:55",
+          "commandDescription": "Attacks the specified Bluetooth device."
+        }
+      ]
+    },
+    {
+      "toolName": "Cadaver",
+      "toolDescription": "Command-line WebDAV client for Unix systems to access WebDAV servers.",
+      "toolStartCommand": "cadaver",
+      "toolCommands": [
+        {
+          "toolCommand": "cadaver http://example.com/webdav/",
+          "commandDescription": "Connects to the WebDAV server."
+        }
+      ]
+    }
+  ]
+}

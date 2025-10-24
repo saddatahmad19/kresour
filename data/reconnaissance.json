@@ -1,0 +1,220 @@
+{
+  "phase": "Reconnaissance",
+  "phaseDescription": "The initial phase of gathering information about the target without direct interaction, using open-source intelligence (OSINT) to identify attack surfaces while minimizing detection risk.",
+  "tools": [
+    {
+      "toolName": "Google Dorks",
+      "toolDescription": "Uses advanced Google search queries to uncover sensitive information, such as exposed documents or login pages, on the target’s website.",
+      "toolStartCommand": "N/A - Web-based",
+      "toolCommands": [
+        {
+          "toolCommand": "site:example.com intext:\"confidential\"",
+          "commandDescription": "Searches for pages containing 'confidential' on example.com to find exposed sensitive data."
+        }
+      ]
+    },
+    {
+      "toolName": "Shodan",
+      "toolDescription": "Queries an online database to identify internet-connected devices, such as servers or IoT devices, associated with the target.",
+      "toolStartCommand": "shodan",
+      "toolCommands": [
+        {
+          "toolCommand": "shodan search --fields ip_str,port,org,hostnames \"org:Example Inc\"",
+          "commandDescription": "Finds devices linked to Example Inc, displaying IP addresses, ports, organizations, and hostnames."
+        }
+      ]
+    },
+    {
+      "toolName": "theHarvester",
+      "toolDescription": "Collects emails, subdomains, hosts, and employee names from public sources like search engines and social media.",
+      "toolStartCommand": "theHarvester",
+      "toolCommands": [
+        {
+          "toolCommand": "theHarvester -d example.com -l 500 -b all",
+          "commandDescription": "Gathers up to 500 results from all available sources for the domain example.com."
+        }
+      ]
+    },
+    {
+      "toolName": "Recon-ng",
+      "toolDescription": "A modular framework that automates OSINT tasks, such as discovering hosts and subdomains related to a target.",
+      "toolStartCommand": "recon-ng",
+      "toolCommands": [
+        {
+          "toolCommand": "use recon/domains-hosts/bing_domain_web",
+          "commandDescription": "Selects the Bing domain web module for host enumeration."
+        },
+        {
+          "toolCommand": "set SOURCE example.com",
+          "commandDescription": "Sets the target domain to example.com."
+        },
+        {
+          "toolCommand": "run",
+          "commandDescription": "Executes the module to find associated hosts."
+        }
+      ]
+    },
+    {
+      "toolName": "Maltego",
+      "toolDescription": "A GUI-based tool for visualizing relationships between entities (e.g., domains, IPs) through data mining and transforms.",
+      "toolStartCommand": "maltego",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Maltego GUI",
+          "commandDescription": "Starts the Maltego application."
+        },
+        {
+          "toolCommand": "Select a domain entity",
+          "commandDescription": "Chooses the domain to investigate within the GUI."
+        },
+        {
+          "toolCommand": "Apply transform 'To IP Address [DNS]'",
+          "commandDescription": "Runs the DNS transform to find IP addresses linked to the domain."
+        }
+      ]
+    },
+    {
+      "toolName": "Amass",
+      "toolDescription": "Performs in-depth subdomain enumeration and asset discovery to map the target’s attack surface.",
+      "toolStartCommand": "amass",
+      "toolCommands": [
+        {
+          "toolCommand": "amass enum -d example.com",
+          "commandDescription": "Enumerates subdomains for example.com."
+        }
+      ]
+    },
+    {
+      "toolName": "Whois",
+      "toolDescription": "Retrieves domain registration details, including owner, registrar, and contact information.",
+      "toolStartCommand": "whois",
+      "toolCommands": [
+        {
+          "toolCommand": "whois example.com",
+          "commandDescription": "Fetches registration details for example.com."
+        }
+      ]
+    },
+    {
+      "toolName": "DIG",
+      "toolDescription": "Queries DNS records, such as MX or A, to reveal infrastructure details like email servers.",
+      "toolStartCommand": "dig",
+      "toolCommands": [
+        {
+          "toolCommand": "dig example.com MX",
+          "commandDescription": "Retrieves MX records for example.com to identify mail servers."
+        }
+      ]
+    },
+    {
+      "toolName": "Nslookup",
+      "toolDescription": "Identifies name servers and resolves DNS entries to understand the target’s DNS infrastructure.",
+      "toolStartCommand": "nslookup",
+      "toolCommands": [
+        {
+          "toolCommand": "nslookup -type=ns example.com",
+          "commandDescription": "Queries for name servers of example.com."
+        }
+      ]
+    },
+    {
+      "toolName": "SpiderFoot",
+      "toolDescription": "Automates OSINT collection by integrating modules like web spidering and external API queries.",
+      "toolStartCommand": "spiderfoot",
+      "toolCommands": [
+        {
+          "toolCommand": "spiderfoot -t example.com -m sfp_spider,sfp_shodan",
+          "commandDescription": "Runs SpiderFoot on example.com with spidering and Shodan modules."
+        }
+      ]
+    },
+    {
+      "toolName": "Sublist3r",
+      "toolDescription": "Discovers subdomains using various search engines and DNS brute-forcing techniques.",
+      "toolStartCommand": "sublist3r",
+      "toolCommands": [
+        {
+          "toolCommand": "sublist3r -d example.com",
+          "commandDescription": "Enumerates subdomains for example.com using multiple techniques."
+        }
+      ]
+    },
+    {
+      "toolName": "Subfinder",
+      "toolDescription": "A subdomain discovery tool that uses passive sources to enumerate valid subdomains.",
+      "toolStartCommand": "subfinder",
+      "toolCommands": [
+        {
+          "toolCommand": "subfinder -d example.com",
+          "commandDescription": "Discovers subdomains for example.com using passive sources."
+        }
+      ]
+    },
+    {
+      "toolName": "WhatWeb",
+      "toolDescription": "Identifies websites and their technologies including CMS, frameworks, and server software.",
+      "toolStartCommand": "whatweb",
+      "toolCommands": [
+        {
+          "toolCommand": "whatweb http://example.com",
+          "commandDescription": "Identifies technologies used on the target website."
+        }
+      ]
+    },
+    {
+      "toolName": "DNSenum",
+      "toolDescription": "Enumerates DNS information including subdomains, mail servers, and zone transfers.",
+      "toolStartCommand": "dnsenum",
+      "toolCommands": [
+        {
+          "toolCommand": "dnsenum example.com",
+          "commandDescription": "Performs comprehensive DNS enumeration on the target domain."
+        }
+      ]
+    },
+    {
+      "toolName": "DNSrecon",
+      "toolDescription": "Advanced DNS enumeration tool for discovering hosts, subdomains, and DNS records.",
+      "toolStartCommand": "dnsrecon",
+      "toolCommands": [
+        {
+          "toolCommand": "dnsrecon -d example.com",
+          "commandDescription": "Enumerates DNS records and subdomains for the target domain."
+        }
+      ]
+    },
+    {
+      "toolName": "Fierce",
+      "toolDescription": "A DNS reconnaissance tool for locating non-contiguous IP space and hostnames.",
+      "toolStartCommand": "fierce",
+      "toolCommands": [
+        {
+          "toolCommand": "fierce -dns example.com",
+          "commandDescription": "Performs DNS reconnaissance to find hosts and subdomains."
+        }
+      ]
+    },
+    {
+      "toolName": "EmailHarvester",
+      "toolDescription": "Searches for email addresses associated with a domain using various search engines.",
+      "toolStartCommand": "emailharvester",
+      "toolCommands": [
+        {
+          "toolCommand": "emailharvester -d example.com",
+          "commandDescription": "Harvests email addresses from the target domain."
+        }
+      ]
+    },
+    {
+      "toolName": "Photon",
+      "toolDescription": "Extremely fast web crawler designed for OSINT and reconnaissance.",
+      "toolStartCommand": "photon",
+      "toolCommands": [
+        {
+          "toolCommand": "photon -u http://example.com",
+          "commandDescription": "Crawls the target website to gather information."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "phase": "Scanning",
+  "phaseDescription": "Actively probing the target network to identify live hosts, open ports, and running services, laying the groundwork for further analysis.",
+  "tools": [
+    {
+      "toolName": "Nmap",
+      "toolDescription": "Performs network scanning to detect live hosts, open ports, services, and operating systems.",
+      "toolStartCommand": "nmap",
+      "toolCommands": [
+        {
+          "toolCommand": "nmap -sS -p- -A example.com",
+          "commandDescription": "Runs a stealth SYN scan on all ports with OS detection, version detection, script scanning, and traceroute."
+        },
+        {
+          "toolCommand": "nmap -sV -p 80,443 example.com",
+          "commandDescription": "Detects service versions on ports 80 and 443."
+        }
+      ]
+    },
+    {
+      "toolName": "Masscan",
+      "toolDescription": "Rapidly scans large networks for open ports with high performance.",
+      "toolStartCommand": "masscan",
+      "toolCommands": [
+        {
+          "toolCommand": "masscan -p1-65535 192.168.1.0/24 --rate=1000",
+          "commandDescription": "Scans all ports on the 192.168.1.0/24 network at 1000 packets per second."
+        }
+      ]
+    },
+    {
+      "toolName": "Unicornscan",
+      "toolDescription": "A fast, stateless scanner for identifying open TCP and UDP ports.",
+      "toolStartCommand": "unicornscan",
+      "toolCommands": [
+        {
+          "toolCommand": "unicornscan -mT 192.168.1.0/24:a",
+          "commandDescription": "Performs a TCP scan on all ports across the 192.168.1.0/24 network."
+        }
+      ]
+    },
+    {
+      "toolName": "Angry IP Scanner",
+      "toolDescription": "A cross-platform GUI tool for scanning IP ranges to identify live hosts and open ports.",
+      "toolStartCommand": "angryip",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Angry IP Scanner GUI",
+          "commandDescription": "Starts the application."
+        },
+        {
+          "toolCommand": "Input IP range (e.g., 192.168.1.0/24) and start scan",
+          "commandDescription": "Scans the specified range for live hosts and open ports."
+        }
+      ]
+    },
+    {
+      "toolName": "Netcat",
+      "toolDescription": "A versatile networking tool for port scanning, banner grabbing, and basic connectivity testing.",
+      "toolStartCommand": "nc",
+      "toolCommands": [
+        {
+          "toolCommand": "nc -zv example.com 1-1000",
+          "commandDescription": "Scans ports 1-1000 on example.com, reporting open ones."
+        }
+      ]
+    },
+    {
+      "toolName": "Hping3",
+      "toolDescription": "Generates custom packets for scanning and testing network responses.",
+      "toolStartCommand": "hping3",
+      "toolCommands": [
+        {
+          "toolCommand": "hping3 -S example.com -p 80 -c 1000",
+          "commandDescription": "Sends 1000 SYN packets to port 80 on example.com to test availability."
+        }
+      ]
+    },
+    {
+      "toolName": "RustScan",
+      "toolDescription": "A modern, fast port scanner optimized for speed and flexibility.",
+      "toolStartCommand": "rustscan",
+      "toolCommands": [
+        {
+          "toolCommand": "rustscan -a 192.168.1.100 --range 1-65535",
+          "commandDescription": "Scans all ports on 192.168.1.100."
+        }
+      ]
+    },
+    {
+      "toolName": "Naabu",
+      "toolDescription": "A lightweight port scanner focused on speed and simplicity.",
+      "toolStartCommand": "naabu",
+      "toolCommands": [
+        {
+          "toolCommand": "naabu -host example.com",
+          "commandDescription": "Scans common ports on example.com."
+        }
+      ]
+    },
+    {
+      "toolName": "Zenmap",
+      "toolDescription": "The official GUI for Nmap, providing a visual interface for scan configuration and results.",
+      "toolStartCommand": "zenmap",
+      "toolCommands": [
+        {
+          "toolCommand": "Launch Zenmap GUI",
+          "commandDescription": "Starts the Zenmap application."
+        },
+        {
+          "toolCommand": "Enter target and select 'Intense scan'",
+          "commandDescription": "Runs a comprehensive scan with OS and version detection."
+        }
+      ]
+    },
+    {
+      "toolName": "Portqry",
+      "toolDescription": "A Windows-based tool for querying open ports and troubleshooting connectivity.",
+      "toolStartCommand": "portqry",
+      "toolCommands": [
+        {
+          "toolCommand": "portqry -n example.com -e 80",
+          "commandDescription": "Queries port 80 on example.com to check its status."
+        }
+      ]
+    },
+    {
+      "toolName": "Netdiscover",
+      "toolDescription": "A network address discovering tool that uses ARP requests to find live hosts.",
+      "toolStartCommand": "netdiscover",
+      "toolCommands": [
+        {
+          "toolCommand": "netdiscover -r 192.168.1.0/24",
+          "commandDescription": "Discovers live hosts in the 192.168.1.0/24 network using ARP."
+        }
+      ]
+    },
+    {
+      "toolName": "Tcpdump",
+      "toolDescription": "A powerful command-line packet analyzer for capturing and analyzing network traffic.",
+      "toolStartCommand": "tcpdump",
+      "toolCommands": [
+        {
+          "toolCommand": "tcpdump -i eth0 -n",
+          "commandDescription": "Captures packets on eth0 interface without DNS resolution."
+        }
+      ]
+    },
+    {
+      "toolName": "Arping",
+      "toolDescription": "Sends ARP requests to determine if a host is alive on the network.",
+      "toolStartCommand": "arping",
+      "toolCommands": [
+        {
+          "toolCommand": "arping -c 3 192.168.1.1",
+          "commandDescription": "Sends 3 ARP requests to check if the host is alive."
+        }
+      ]
+    },
+    {
+      "toolName": "Arpwatch",
+      "toolDescription": "Monitors ARP activity on the network to detect ARP spoofing attacks.",
+      "toolStartCommand": "arpwatch",
+      "toolCommands": [
+        {
+          "toolCommand": "arpwatch -i eth0",
+          "commandDescription": "Monitors ARP activity on the eth0 interface."
+        }
+      ]
+    },
+    {
+      "toolName": "Wireshark",
+      "toolDescription": "A network protocol analyzer for capturing and analyzing network traffic.",
+      "toolStartCommand": "wireshark",
+      "toolCommands": [
+        {
+          "toolCommand": "wireshark",
+          "commandDescription": "Launches the Wireshark GUI for packet analysis."
+        },
+        {
+          "toolCommand": "tshark -i eth0 -c 100",
+          "commandDescription": "Captures 100 packets on eth0 using command-line interface."
+        }
+      ]
+    },
+    {
+      "toolName": "Tshark",
+      "toolDescription": "Command-line version of Wireshark for packet capture and analysis.",
+      "toolStartCommand": "tshark",
+      "toolCommands": [
+        {
+          "toolCommand": "tshark -i eth0 -f \"tcp port 80\"",
+          "commandDescription": "Captures HTTP traffic on port 80."
+        }
+      ]
+    }
+  ]
+}
