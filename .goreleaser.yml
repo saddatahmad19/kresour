@@ -7,18 +7,68 @@ description: A Terminal User Interface (TUI) for navigating cybersecurity resour
 
 # Build configuration
 builds:
-  - id: kresour
+  # Individual binaries for direct download
+  - id: kresour-linux-amd64
     binary: kresour
     main: ./cmd/kresour
-    goos:
-      - linux
-      - darwin
-      - windows
-    goarch:
-      - amd64
-      - arm64
-    goarm:
-      - 7
+    goos: [linux]
+    goarch: [amd64]
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+    env:
+      - CGO_ENABLED=0
+
+  - id: kresour-linux-arm64
+    binary: kresour
+    main: ./cmd/kresour
+    goos: [linux]
+    goarch: [arm64]
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+    env:
+      - CGO_ENABLED=0
+
+  - id: kresour-windows-amd64
+    binary: kresour.exe
+    main: ./cmd/kresour
+    goos: [windows]
+    goarch: [amd64]
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+    env:
+      - CGO_ENABLED=0
+
+  - id: kresour-darwin-amd64
+    binary: kresour
+    main: ./cmd/kresour
+    goos: [darwin]
+    goarch: [amd64]
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+    env:
+      - CGO_ENABLED=0
+
+  - id: kresour-darwin-arm64
+    binary: kresour
+    main: ./cmd/kresour
+    goos: [darwin]
+    goarch: [arm64]
     ldflags:
       - -s -w
       - -X main.version={{.Version}}
@@ -80,29 +130,37 @@ release:
     
     A Terminal User Interface (TUI) for navigating cybersecurity resources and tools organized by engagement phases.
     
-    ### 📦 Installation
+    ### 📦 Installation Options
     
-    **One-line install (Recommended):**
+    **🚀 One-line install (Recommended):**
     ```bash
     curl -sL https://raw.githubusercontent.com/saddatahmad19/kresour/main/install.sh | bash
     ```
     
-    **Go install:**
-    ```bash
-    go install github.com/saddatahmad19/kresour/cmd/kresour@latest
-    ```
+    **⚡ Direct Binary Download:**
     
-    ### 🔧 Manual Installation
+    | Platform | Architecture | Direct Download |
+    |----------|-------------|------------------|
+    | Linux | x86_64 | `kresour` (Linux AMD64) |
+    | Linux | ARM64 | `kresour` (Linux ARM64) |
+    | macOS | x86_64 | `kresour` (macOS AMD64) |
+    | macOS | ARM64 | `kresour` (macOS ARM64) |
+    | Windows | x86_64 | `kresour.exe` (Windows AMD64) |
     
-    Download the appropriate binary for your platform:
+    **📦 Archive Downloads (with documentation):**
     
-    | Platform | Architecture | Download |
-    |----------|-------------|----------|
+    | Platform | Architecture | Archive Download |
+    |----------|-------------|-------------------|
     | Linux | x86_64 | `kresour_Linux_x86_64.tar.gz` |
     | Linux | ARM64 | `kresour_Linux_arm64.tar.gz` |
     | macOS | x86_64 | `kresour_Darwin_x86_64.tar.gz` |
     | macOS | ARM64 | `kresour_Darwin_arm64.tar.gz` |
     | Windows | x86_64 | `kresour_Windows_x86_64.zip` |
+    
+    **🔧 Go install:**
+    ```bash
+    go install github.com/saddatahmad19/kresour/cmd/kresour@latest
+    ```
     
     ### 📋 Full Changelog
     

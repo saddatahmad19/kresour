@@ -36,6 +36,25 @@ This script will:
 - Install to `/usr/local/bin` (or `$GOBIN` if set)
 - Set proper executable permissions
 
+### Direct Binary Download
+
+For users who want just the executable file without installation:
+
+```bash
+# Download the latest binary for your platform
+curl -sL https://raw.githubusercontent.com/saddatahmad19/kresour/main/download.sh | bash
+```
+
+Or download manually from the [latest release](https://github.com/saddatahmad19/kresour/releases/latest):
+
+| Platform | Architecture | Direct Download |
+|----------|-------------|------------------|
+| Linux | x86_64 | `kresour` (Linux AMD64) |
+| Linux | ARM64 | `kresour` (Linux ARM64) |
+| macOS | x86_64 | `kresour` (macOS AMD64) |
+| macOS | ARM64 | `kresour` (macOS ARM64) |
+| Windows | x86_64 | `kresour.exe` (Windows AMD64) |
+
 ### Go Install (Alternative)
 
 If you have Go 1.20+ installed, you can install directly:
